@@ -1,5 +1,11 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
+  CdkScrollable,
+  CdkScrollableModule,
+  ScrollDispatcher,
+  ViewportRuler
+} from "./chunk-UHDOAQHH.js";
+import {
   animate,
   state,
   style,
@@ -14,12 +20,6 @@ import {
   MatCommonModule,
   hasModifierKey
 } from "./chunk-LDMQ6AVK.js";
-import {
-  CdkScrollable,
-  CdkScrollableModule,
-  ScrollDispatcher,
-  ViewportRuler
-} from "./chunk-UHDOAQHH.js";
 import "./chunk-USFOOY6V.js";
 import {
   Platform,

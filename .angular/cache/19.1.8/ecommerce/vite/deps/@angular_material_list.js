@@ -2,9 +2,6 @@ import {
   MatDividerModule
 } from "./chunk-EF2PBO6H.js";
 import {
-  SelectionModel
-} from "./chunk-74IUADPR.js";
-import {
   A,
   CdkObserveContent,
   ENTER,
@@ -20,6 +17,9 @@ import {
   _StructuralStylesLoader,
   hasModifierKey
 } from "./chunk-4BNQY6IY.js";
+import {
+  SelectionModel
+} from "./chunk-74IUADPR.js";
 import {
   Platform,
   _getFocusedElementPierceShadowDom,

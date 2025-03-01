@@ -7,10 +7,12 @@ import { AdminModule } from './admin/admin.module';
 import { UiModule } from './ui/ui.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-
+import {NgxSpinnerModule} from "ngx-spinner";
+import { BaseComponent } from './base/base.component'
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -18,7 +20,9 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     AdminModule,
     UiModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    NgxSpinnerModule
+    
   ],
   providers: [
     provideClientHydration(withEventReplay()),
