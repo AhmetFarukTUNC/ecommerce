@@ -2,14 +2,16 @@ import { createRequire } from 'module';const require = createRequire(import.meta
 import {
   NoopAnimationsModule,
   provideNoopAnimations
-} from "./chunk-RND2ZQ5C.js";
+} from "./chunk-DRXVRDTK.js";
 import {
   BrowserDomAdapter,
   BrowserModule,
   EVENT_MANAGER_PLUGINS,
-  EventManagerPlugin,
+  EventManagerPlugin
+} from "./chunk-3TI32C3L.js";
+import {
   HTTP_ROOT_INTERCEPTOR_FNS
-} from "./chunk-AMHDVUEV.js";
+} from "./chunk-TQLFOCE7.js";
 import {
   DOCUMENT,
   NullViewportScroller,
@@ -16982,4 +16984,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-MKR45UEY.js.map
+//# sourceMappingURL=chunk-DXW2Z77B.js.map

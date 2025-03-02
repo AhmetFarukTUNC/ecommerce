@@ -7,7 +7,8 @@ import {
 } from "./chunk-VLQAWK6W.js";
 import {
   DomSanitizer
-} from "./chunk-4D2TFGXJ.js";
+} from "./chunk-ZCUWF3L6.js";
+import "./chunk-XM3B5COV.js";
 import {
   NgForOf,
   NgIf

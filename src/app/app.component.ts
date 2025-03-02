@@ -11,11 +11,15 @@ declare var  $: any
   styleUrls: ['./app.component.scss'],
   standalone: false // Standalone özelliğini kaldır
 })
-export class AppComponent{
+export class AppComponent implements OnInit{
   title = 'ecommerce';
 
   constructor(){
   
+  }
+
+  ngOnInit(): void {
+    
   }
 
   
@@ -24,5 +28,5 @@ export class AppComponent{
 
 }
 
-$.get("https://localhost:7131/api/products")
+
 

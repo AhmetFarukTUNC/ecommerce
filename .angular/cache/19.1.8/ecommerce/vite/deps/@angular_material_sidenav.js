@@ -7,6 +7,13 @@ import {
   hasModifierKey
 } from "./chunk-4BNQY6IY.js";
 import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger
+} from "./chunk-VLQAWK6W.js";
+import {
   CdkScrollable,
   CdkScrollableModule,
   ScrollDispatcher,
@@ -21,13 +28,6 @@ import {
 import {
   Directionality
 } from "./chunk-JE4GUG32.js";
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger
-} from "./chunk-VLQAWK6W.js";
 import {
   DOCUMENT
 } from "./chunk-5T7FV3WH.js";
