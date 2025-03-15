@@ -23,6 +23,7 @@ ngOnInit(): void {
     }, 1000);
 
     this.httpClientService.get({
+      
       controller:"products"
     }).subscribe(data => console.log(data));
 }
