@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { HttpClientService } from '../../../services/common/http-client.service';
+import { Product } from '../../../contracts/product';
 
 @Component({
   selector: 'app-products',
@@ -55,11 +56,11 @@ ngOnInit(): void {
     //   price:5.5
     // }).subscribe();
 
-    this.httpClientService.delete({
-      controller:"products"
-    },"af5e67b8-e82b-4643-7219-08dd640fe3c9").subscribe()
+    // this.httpClientService.delete({
+    //   controller:"products"
+    // },"af5e67b8-e82b-4643-7219-08dd640fe3c9").subscribe()
 
-    this.httpClientService.get({
+    this.httpClientService.get<Product>({
       
       controller:"products"
     }).subscribe(data => console.log(data));
