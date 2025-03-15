@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    
+    $.get("https://localhost:7182/api/products")
   }
 
   
