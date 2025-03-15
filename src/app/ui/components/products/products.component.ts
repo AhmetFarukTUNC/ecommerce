@@ -21,6 +21,10 @@ ngOnInit(): void {
       /** spinner ends after 5 seconds */
       this.hideSpinner(SpinnerType.BallAtom);
     }, 1000);
+
+    this.httpClientService.get({
+      controller:"products"
+    }).subscribe(data => console.log(data));
 }
 
 
