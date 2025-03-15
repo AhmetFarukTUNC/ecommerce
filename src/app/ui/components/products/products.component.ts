@@ -22,10 +22,53 @@ ngOnInit(): void {
       this.hideSpinner(SpinnerType.BallAtom);
     }, 1000);
 
+   
+
+    // this.httpClientService.post({
+    //   controller:"products"
+    // },{
+    //   name:"Kalem23",
+    //   stock:100,
+    //   price:15
+    // }).subscribe();
+    // this.httpClientService.post({
+    //   controller:"products"
+    // },{
+    //   name:"Kalem33",
+    //   stock:100,
+    //   price:15
+    // }).subscribe();
+    // this.httpClientService.post({
+    //   controller:"products"
+    // },{
+    //   name:"Kalem44",
+    //   stock:100,
+    //   price:15
+    // }).subscribe();
+
+    // this.httpClientService.put({
+    //   controller:"products"
+    // },{
+    //   id:"f431bb87-174d-414a-7217-08dd640fe3c9",
+    //   name:"renkli kalem",
+    //   stock:1500,
+    //   price:5.5
+    // }).subscribe();
+
+    this.httpClientService.delete({
+      controller:"products"
+    },"af5e67b8-e82b-4643-7219-08dd640fe3c9").subscribe()
+
     this.httpClientService.get({
       
       controller:"products"
     }).subscribe(data => console.log(data));
+
+
+
+    
+
+    
 }
 
 
