@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { HttpClientService, RequestParameters } from '../../../services/common/http-client.service';
-import { Product } from '../../../contracts/product';
+import { Create_Product } from '../../../contracts/create_product';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-products',
@@ -25,7 +26,7 @@ ngOnInit(): void {
       this.hideSpinner(SpinnerType.BallAtom);
     }, 1000);
 
-    this.httpClientService.get<Product[]>({
+    this.httpClientService.get<Create_Product[]>({
       controller:"products"
     }).subscribe(data => console.log(data))
 

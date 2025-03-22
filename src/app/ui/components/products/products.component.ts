@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { HttpClientService } from '../../../services/common/http-client.service';
-import { Product } from '../../../contracts/product';
+import { Create_Product } from '../../../contracts/create_product';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-products',
@@ -60,7 +61,7 @@ ngOnInit(): void {
     //   controller:"products"
     // },"af5e67b8-e82b-4643-7219-08dd640fe3c9").subscribe()
 
-    this.httpClientService.get<Product>({
+    this.httpClientService.get<Create_Product>({
       
       controller:"products"
     }).subscribe(data => console.log(data));

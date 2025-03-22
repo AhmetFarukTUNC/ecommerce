@@ -1,0 +1,100 @@
+<mat-card class="product-card">
+  <mat-card-title class="product-title">Create Product</mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="outline" class="blue-theme">
+      <mat-label>Name</mat-label>
+      <input matInput #txtName>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="blue-theme">
+      <mat-label>Stock</mat-label>
+      <input matInput type="number" #txtStock>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="blue-theme">
+      <mat-label>Price</mat-label>
+      <input matInput type="number" #txtPrice>
+    </mat-form-field>
+
+    <button mat-flat-button class="green-button" (click)="create(txtName,txtStock,txtPrice)">
+      Create Product
+    </button>
+  </mat-card-content>
+</mat-card>
+
+<style>
+  /* Kart Tasarımı */
+  .product-card {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background: #f5faff;
+  }
+
+  /* Başlık Stili */
+  .product-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0d47a1;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  /* Form Alanı Stili */
+  .blue-theme {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Çerçeve Rengi */
+  .blue-theme .mat-form-field-outline {
+    color: #1976d2;
+  }
+
+  /* Odaklanma Durumunda Çerçeve */
+  .blue-theme .mat-form-field-outline-thick {
+    color: #0d47a1;
+  }
+
+  /* Etiket Rengi */
+  .blue-theme .mat-form-field-label {
+    color: #1976d2;
+  }
+
+  /* Yazı Rengi */
+  .blue-theme .mat-input-element {
+    color: #0d47a1;
+  }
+
+  /* Dalga Efekti */
+  .blue-theme .mat-form-field-ripple {
+    background-color: #1976d2;
+  }
+
+  /* Buton Tasarımı */
+  .green-button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    background: #00ff2f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Hover Etkisi */
+  .blue-button:hover {
+    background: #0d47a1;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Butona Tıklandığında */
+  .blue-button:active {
+    transform: scale(0.98);
+  }
+</style>
