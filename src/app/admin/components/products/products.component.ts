@@ -26,9 +26,7 @@ ngOnInit(): void {
       this.hideSpinner(SpinnerType.BallAtom);
     }, 1000);
 
-    this.httpClientService.get<Create_Product[]>({
-      controller:"products"
-    }).subscribe(data => console.log(data))
+   
 
     // this.httpClientService.post({
     //   controller:"products"
