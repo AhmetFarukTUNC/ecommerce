@@ -46,6 +46,15 @@ export class CreateComponent extends BaseComponent implements OnInit {
       return;
     }
 
+    if (parseInt(price.value) < 0) {
+      this.alertify.message("Lütfen price bilgisini doğru giriniz!", {
+      dismissOthers: true,
+      messageType: MessageType. Error,
+      position: Position. TopRight
+      });
+      return;
+    }
+
     this.productService.create(create_product, () => {
       this.hideSpinner(SpinnerType.BallAtom);
       this.alertify.message("Ürün başarıyla eklenmiştir.", {
