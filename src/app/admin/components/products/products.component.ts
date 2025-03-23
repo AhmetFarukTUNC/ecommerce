@@ -4,12 +4,16 @@ import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { HttpClientService, RequestParameters } from '../../../services/common/http-client.service';
 import { Create_Product } from '../../../contracts/create_product';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatTableDataSource,MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { List_Product } from '../../../contracts/list_product';
 
 @Component({
   selector: 'app-products',
   standalone: false,
   templateUrl: './products.component.html',
-  styleUrl: './products.component.scss'
+  styleUrl: './products.component.scss',
+  
 })
 export class ProductsComponent extends BaseComponent implements OnInit {
 constructor(spinner:NgxSpinnerService,private httpClientService : HttpClientService) {
@@ -17,6 +21,8 @@ constructor(spinner:NgxSpinnerService,private httpClientService : HttpClientServ
   super(spinner)
   
 }
+displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate','updatedDate'];
+dataSource : MatTableDataSource<List_Product> = null;
 
 ngOnInit(): void {
   this.showSpinner(SpinnerType.BallAtom);

@@ -8,11 +8,11 @@ import {
   renderApplication,
   renderModule
 } from "./chunk-DXW2Z77B.js";
-import "./chunk-MRTKVUOK.js";
 import "./chunk-DRXVRDTK.js";
+import "./chunk-MRTKVUOK.js";
 import "./chunk-3TI32C3L.js";
-import "./chunk-TQLFOCE7.js";
 import "./chunk-UGUSJNV7.js";
+import "./chunk-TQLFOCE7.js";
 import "./chunk-BGILPUG2.js";
 import "./chunk-CH64OKJE.js";
 import {
