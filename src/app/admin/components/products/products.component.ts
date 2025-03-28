@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { BaseComponent, SpinnerType } from '../../../base/base.component';
 import { HttpClientService, RequestParameters } from '../../../services/common/http-client.service';
@@ -7,6 +7,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatTableDataSource,MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { List_Product } from '../../../contracts/list_product';
+import { ListComponent } from './list/list.component';
 
 @Component({
   selector: 'app-products',
@@ -21,7 +22,7 @@ constructor(spinner:NgxSpinnerService,private httpClientService : HttpClientServ
   super(spinner)
   
 }
-displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate','updatedDate'];
+displayedColumns: string[] = ['id','name', 'stock', 'price', 'createdDate','updatedDate'];
 dataSource : MatTableDataSource<List_Product> = null;
 
 ngOnInit(): void {
@@ -85,6 +86,12 @@ ngOnInit(): void {
     //   controller:"posts"
     // }).subscribe(data => console.log(data))
     
+}
+
+@ViewChild(ListComponent) listComponents: ListComponent;
+
+createdProduct (createdProduct: Create_Product) {
+this.listComponents.getProducts(); 
 }
 
 }

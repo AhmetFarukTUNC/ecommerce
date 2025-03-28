@@ -1,100 +1,114 @@
 <mat-card class="product-card">
   <mat-card-title class="product-title">Create Product</mat-card-title>
   <mat-card-content>
-    <mat-form-field appearance="outline" class="blue-theme">
+    <mat-form-field appearance="outline" class="orange-theme">
       <mat-label>Name</mat-label>
-      <input matInput #txtName>
+      <input matInput #txtName placeholder="Enter product name">
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="blue-theme">
+    <mat-form-field appearance="outline" class="orange-theme">
       <mat-label>Stock</mat-label>
-      <input matInput type="number" #txtStock min="0" value="0">
+      <input matInput type="number" #txtStock min="0" value="0" placeholder="Enter stock">
     </mat-form-field>
 
-    <mat-form-field appearance="outline" class="blue-theme">
+    <mat-form-field appearance="outline" class="orange-theme">
       <mat-label>Price</mat-label>
-      <input matInput type="number" #txtPrice min="0" value="0">
+      <input matInput type="number" #txtPrice min="0" value="0" placeholder="Enter price">
     </mat-form-field>
 
-    <button mat-flat-button class="green-button" (click)="create(txtName,txtStock,txtPrice)">
+    <button mat-flat-button class="orange-button" (click)="create(txtName, txtStock, txtPrice)">
       Create Product
     </button>
+    <app-fileupload [options]="fileUploadOptions"></app-fileupload>
   </mat-card-content>
 </mat-card>
 
 <style>
-  /* Kart Tasarımı */
+  /* Genel Kart Tasarımı */
   .product-card {
-    max-width: 400px;
+    max-width: 420px;
     margin: 40px auto;
     padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    background: #f5faff;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    background: #fff3e0;
+    border: 1px solid #ff9800;
   }
 
   /* Başlık Stili */
   .product-title {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    color: #0d47a1;
+    color: #e65100;
     text-align: center;
     margin-bottom: 20px;
+    border-bottom: 3px solid #ff9800;
+    padding-bottom: 10px;
+    text-transform: uppercase;
   }
 
   /* Form Alanı Stili */
-  .blue-theme {
+  .orange-theme {
     width: 100%;
     margin-bottom: 20px;
   }
 
-  /* Çerçeve Rengi */
-  .blue-theme .mat-form-field-outline {
-    color: #1976d2;
+  /* Çerçeve ve Placeholder Renkleri */
+  .orange-theme .mat-form-field-outline {
+    color: #ff9800;
   }
 
-  /* Odaklanma Durumunda Çerçeve */
-  .blue-theme .mat-form-field-outline-thick {
-    color: #0d47a1;
+  .orange-theme .mat-form-field-label {
+    color: #ff9800;
   }
 
-  /* Etiket Rengi */
-  .blue-theme .mat-form-field-label {
-    color: #1976d2;
+  .orange-theme .mat-input-element::placeholder {
+    color: #e65100; /* Placeholder turuncu */
+    opacity: 1;
   }
 
-  /* Yazı Rengi */
-  .blue-theme .mat-input-element {
-    color: #0d47a1;
+  .orange-theme .mat-input-element {
+    color: #e65100;
   }
 
-  /* Dalga Efekti */
-  .blue-theme .mat-form-field-ripple {
-    background-color: #1976d2;
+  /* Focus Olduğunda Border Rengini Değiştirme */
+  .orange-theme .mat-form-field-outline-thick {
+    color: #ff9800;
+    transition: color 0.2s;
+  }
+
+  .orange-theme.mat-focused .mat-form-field-outline-thick {
+    color: #f57c00; /* Focus olduğunda daha koyu turuncu */
+  }
+
+  /* Form Ripple Etkisi */
+  .orange-theme .mat-form-field-ripple {
+    background-color: #ff9800;
   }
 
   /* Buton Tasarımı */
-  .green-button {
+  .orange-button {
     width: 100%;
     padding: 12px 0;
     font-size: 16px;
-    background: #00ff2f;
+    font-weight: bold;
+    background: #ff9800;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background 0.2s, box-shadow 0.2s;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
   }
 
-  /* Hover Etkisi */
-  .blue-button:hover {
-    background: #0d47a1;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* Hover ve Tıklama Etkileri */
+  .orange-button:hover {
+    background: #f57c00;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   }
 
-  /* Butona Tıklandığında */
-  .blue-button:active {
+  .orange-button:active {
     transform: scale(0.98);
   }
 </style>

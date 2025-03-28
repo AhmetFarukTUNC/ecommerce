@@ -1,41 +1,17 @@
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
+<div style="display: flex; justify-content: center; background-color: #f5f5f5; padding: 20px;">
+  <div class="product-container" style="max-width: 900px; width: 100%; background-color: white; border-radius: 12px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); overflow: hidden;">
+    
+    <!-- Create Section -->
+    <div class="create-section" style="padding: 20px; border-bottom: 1px solid #ddd;">
+      <h2 style="color: #3f51b5; margin-bottom: 10px; text-align: center;">Ürün Oluştur</h2>
+      <app-create (createdProduct)="createdProduct($event)"></app-create>
+    </div>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name :  </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
+    <!-- List Section -->
+    <div class="list-section" style="padding: 20px;">
+      <h2 style="color: #3f51b5; margin-bottom: 10px; text-align: center;">Ürün Listesi</h2>
+      <app-list></app-list>
+    </div>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef> Price :  </th>
-      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="stok">
-      <th mat-header-cell *matHeaderCellDef> Stok :  </th>
-      <td mat-cell *matCellDef="let element"> {{element.stok}} </td>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="createdDate">
-      <th mat-header-cell *matHeaderCellDef> CreatedDate </th>
-      <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
-    </ng-container>
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="updatedDate">
-      <th mat-header-cell *matHeaderCellDef> UpdatedDate </th>
-      <td mat-cell *matCellDef="let element"> {{element.updatedDate}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                 showFirstLastButtons
-                 aria-label="Select page of periodic elements">
-  </mat-paginator>
+  </div>
 </div>

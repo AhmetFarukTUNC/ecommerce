@@ -12,11 +12,17 @@ import { MatCardModule } from '@angular/material/card';
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import { DeleteDirective } from '../../../directives/admin/delete.directive';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DeleteDialogComponent } from '../../../dialogs/delete-dialog/delete-dialog.component';
+import { FileuploadModule } from '../../../services/common/fileupload/fileupload.module';
 @NgModule({
   declarations: [
     ProductsComponent,
     CreateComponent,
-    ListComponent
+    ListComponent,
+    DeleteDirective,
+    DeleteDialogComponent
   ],
   imports: [
     CommonModule,
@@ -28,8 +34,12 @@ import {MatTableDataSource, MatTableModule} from '@angular/material/table';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatTableModule
-  ]
+    MatTableModule,
+    MatPaginatorModule,
+    MatDialogModule,
+    FileuploadModule
+  ],
+  
 
 })
 export class ProductsModule { }

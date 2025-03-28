@@ -1,0 +1,33 @@
+<div class="upload-container">
+    <div class="drop-zone">
+      <ngx-file-drop
+        dropZoneLabel="Dosyalarınızı buraya bırakın"
+        (onFileDrop)="selectedFiles($event)"
+        [accept]="options.accept"
+        
+      >
+        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+          <p class="upload-text">{{options.explanation}} 📂</p>
+          <button class="modern-btn" type="button" (click)="openFileSelector()">
+            📂 Dosya Yükle
+          </button>
+        </ng-template>
+      </ngx-file-drop>
+    </div>
+  
+    <div class="upload-table" *ngIf="files && files.length > 0">
+      <table class="table" >
+        <thead>
+          <tr>
+            <th>Dosya Adı</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of files; let i = index">
+            <td class="file-name"><strong>{{ item.relativePath }}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
