@@ -3,6 +3,9 @@ import {
   _VisuallyHiddenLoader
 } from "./chunk-JI5SZDY2.js";
 import {
+  BidiModule
+} from "./chunk-XW4FAPF5.js";
+import {
   Platform,
   _getEventTarget,
   _getFocusedElementPierceShadowDom,
@@ -11,10 +14,7 @@ import {
   coerceElement,
   coerceNumberProperty,
   normalizePassiveListenerOptions
-} from "./chunk-6B6X627W.js";
-import {
-  BidiModule
-} from "./chunk-XW4FAPF5.js";
+} from "./chunk-VYK4GNNO.js";
 import {
   DOCUMENT
 } from "./chunk-Q3MKOC4F.js";
@@ -5196,4 +5196,4 @@ export {
   MatOptionModule,
   MatRippleLoader
 };
-//# sourceMappingURL=chunk-I5HMBTNO.js.map
+//# sourceMappingURL=chunk-X5WGSPOA.js.map
