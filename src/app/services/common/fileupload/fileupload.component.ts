@@ -9,6 +9,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { DeleteDialogComponent, DeleteState } from '../../../dialogs/delete-dialog/delete-dialog.component';
 import { FileUploadDialogComponent, FileUploadDialogState } from '../../../dialogs/file-upload-dialog/file-upload-dialog.component';
 import { DialogService } from '../dialog.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { SpinnerType } from '../../../base/base.component';
 
 @Component({
   selector: 'app-fileupload',
@@ -22,7 +24,8 @@ export class FileuploadComponent {
     private alertifyService: AlertifyService,
     private customToastrService: CustomToastrService,
     private dialog: MatDialog,
-    private dialogService : DialogService
+    private dialogService : DialogService,
+    private spinnerService:NgxSpinnerService
   ) {}
 
   @Input() options: Partial<FileUploadOptions>;
@@ -45,6 +48,7 @@ export class FileuploadComponent {
       componentType:FileUploadDialogComponent,
       data: FileUploadDialogState.Yes,
       afterClosed:() => {
+        this.spinnerService.show(SpinnerType.BallAtom)
         this.httpClientService
           .post(
             {
@@ -70,6 +74,7 @@ export class FileuploadComponent {
                   position: ToastrPosition.TopRight,
                 });
               }
+              this.spinnerService.hide(SpinnerType.BallAtom)
             },
             (errorResponse: HttpErrorResponse) => {
               const message: string =
@@ -86,6 +91,7 @@ export class FileuploadComponent {
                   position: ToastrPosition.TopRight,
                 });
               }
+              this.spinnerService.hide(SpinnerType.BallAtom);
             }
           );
       }
